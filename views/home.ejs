@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <title><%=locals.title%></title>
+        <!-- font awesome icon -->
+        <script src="https://kit.fontawesome.com/d04f3c9245.js" crossorigin="anonymous"></script>
+        <!-- Adding CSS files -->
+        <link rel="stylesheet" href="/css/home.css"> 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    </head>
+    <body>
+
+        <!-- annimation -->
+        <div class="area" >
+            <ul class="circles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+            </ul>
+    </div >
+
+    <!-- annimation end -->
+    <div class="context">
+        <div class="left">
+            <!-- Creating list on the webpage using collections and Method attribute having POST operation -->
+            <form action="/create-list" method="POST">
+                <div class="form-group row">
+                    <input type="text" name="desc" placeholder="Enter Desc" style="height: 38px;border-radius: 5px; margin-right: 20px;">
+                    <!-- bootstrap date picklist is used -->
+                    <div class="form-group row">
+                        <div class="col-11">
+                          <input style="margin-right: 0px;" class="form-control" type="date" name="date" value="2020-05-19" id="example-date-input">
+                        </div>
+                      </div>
+                      <!-- created category picklist -->
+                      <select type="category" name="category" style="height: 38px; padding: 5px; margin-right: 20px;margin-left:0px;border-radius: 5px;">
+                          <option>OFFICE</option>
+                          <option>SCHOOL</option>
+                          <option>HOME</option>
+                      </select>
+                    <button type="submit" class="addbtn" style="height: 38px;"><i class="fa fa-plus" aria-hidden="true"></i>      ADD TASK</button>
+                  </div>
+
+           </form>
+
+           <!-- looping over the list, rendering and deleting with the help of Ejs -->
+            <% for (let i of todo_desc){ %>
+                <div class="disp">
+               <div class="todisp">
+                    <p><%= i.desc %></p>
+                    <p><%= i.date %></p>
+                </div>
+                <div class="butn">
+                    <!-- Delete operation using query -->
+
+                <a href="/delete_list/?id=<%= i._id %>">
+                    <button class="delete-btn"><i class="fa fa-trash-o" aria-hidden="true"></i>               DELETE</button>
+                </a>
+                <!-- Set different color to different category using Ejs -->
+                <button id="category-btn" style = "<%= i.category === 'OFFICE' ? 'background-color: orangered ;' : '' %><%= i.category === 'SCHOOL' ? 'background-color: purple' : '' %><%= i.category === 'HOME' ? 'background-color: orange' : '' %>"><%= i.category %></button>
+               
+            </div>
+        </div>    
+        <!-- End of the loop -->
+           <% }  %>
+        </div>   
+           <!-- Adding Js file located in asset folder -->
+        <script type="text/javascript" src="/js/home.js"></script>
+    </body>
+</html>

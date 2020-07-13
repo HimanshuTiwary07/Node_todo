@@ -1,0 +1,246 @@
+
+/* ---------------todo-list position styling -----------*/
+.left{
+    margin: 20px;
+    width: 65%;
+    padding: 50px;
+    margin-top: -200px;
+    margin-bottom: 150px;
+    margin-left: 18%;
+    box-shadow: 5px 5px 20px 2px black;
+    border-radius: 15px;
+}
+
+.todisp {
+    display: inline-flex;
+    margin-top: 10px;
+    color: black;
+    font-size: 18px;
+    font-weight: 500;
+}
+.todisp input{
+    margin-top: 7px;
+    margin-right: 5px;
+}
+
+/* ----------date style------------- */
+
+
+.todisp p:nth-child(2){
+    font-size: 10px;
+    margin-top: 9px;
+    margin-left: 15px;
+}
+
+/*----------- input form style----------- */
+form input{
+    padding: 0;
+    padding-right: 100px;
+    border-radius: bold 8px;
+}
+.disp{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* -------------style for add button---------- */
+
+.addbtn{
+    margin-left:5px;
+    padding: 0px 20px 0px 20px;
+    background-color: rgb(39, 38, 38);
+    color: white;
+
+}
+
+/* -------------style for delete button------------ */
+.butn .delete-btn{
+    margin: 5px;
+    background-color: transparent;
+    border: solid lightgray;
+    
+    padding: 5px 25px 5px 25px;
+    min-width: 120px;
+}
+
+/* --------------delete button after hover ----------*/
+.butn .delete-btn:hover{
+    margin: 5px;
+    background-color: rgb(21, 47, 80);
+    border: solid lightsteelblue;
+    color: white;
+    
+    padding: 5px 25px 5px 25px;
+    min-width: 120px;
+}
+
+/* ------------category button styling-------- */
+#category-btn{
+    margin: 5px;
+    background-color: transparent;
+    border: solid WHITE;
+    border-radius: 5px;
+    padding: 5px 25px 5px 25px;
+    min-width: 120px;
+}
+
+
+
+
+
+
+/* Annimation For the background */
+
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    font-family: 'Exo', sans-serif;
+    max-height: 100vh;
+    width: 100%;
+    
+}
+
+/*---------- display content on background------- */
+.context {
+    width: 100%;
+    position: absolute;
+    top:50vh;
+    
+}
+
+.context h1{
+    text-align: center;
+    color: #fff;
+    font-size: 50px;
+}
+
+
+.area{
+    background: white;  
+    background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);  
+    width: 100%;
+    height:100vh;
+    
+   
+}
+/* ------------animated sqrs -------------*/
+.circles{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.circles li{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background:#7FFFD4;
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+    
+}
+
+/* -----------size for different sqrs ----------*/
+.circles li:nth-child(1){
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+
+.circles li:nth-child(2){
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.circles li:nth-child(3){
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.circles li:nth-child(4){
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.circles li:nth-child(5){
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(6){
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.circles li:nth-child(7){
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.circles li:nth-child(8){
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.circles li:nth-child(9){
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles li:nth-child(10){
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+
+/* ----------transition effect ----------*/
+@keyframes animate {
+
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+
+}
